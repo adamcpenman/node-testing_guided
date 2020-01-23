@@ -36,7 +36,11 @@ server.use((err, req, res, next) => {
     message: "Something went wrong",
   })
 })
-
+if (!module.parent) {
 server.listen(port, () => {
   console.log(`\n=> Server up at http://localhost:${port}\n`)
 })
+}
+
+
+module.exports = server
